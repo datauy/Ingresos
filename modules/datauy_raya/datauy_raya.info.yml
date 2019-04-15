@@ -1,0 +1,6 @@
+name: Datauy custom Raya
+description: Custom module for Raya implementation
+package: DATAUY
+
+type: module
+core: 8.x

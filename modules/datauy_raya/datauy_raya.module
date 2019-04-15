@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use \Drupal\Core\Database\Database;
+
+function datauy_raya_form_node_form_alter(&$form, FormStateInterface $form_state) {
+  // For submit callbacks.
+  $form['actions']['submit']['#submit'][] = 'datauy_raya_node_form_submit';
+}
+
+function datauy_raya_node_form_submit($form, FormStateInterface $form_state) {
+  $node = $form_state->getFormObject()->getEntity();
+  $values = $form_state->getValues();
+  $sexo = $values['field__cual_es_tu_sexo_']['0']['value'];
+  $ingreso = $values['field_ingreso_mensual']['0']['value'];
+  $session = \Drupal::request()->getSession();
+  $session->set('ingreso', $ingreso);
+  $session->set('sexo', $sexo);
+  $value = $session->get('ingreso', 'default');
+  /*print '<pre>';
+  print_r($value);
+  exit();*/
+  $form_state->setRedirect('datauy_raya.parte1');
+  return;
+}

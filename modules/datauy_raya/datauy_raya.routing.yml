@@ -1,0 +1,6 @@
+datauy_raya.parte1:
+  path: '/resultados/parte1'
+  defaults:
+    _controller: '\Drupal\datauy_raya\Controller\DatauyPages::parte1'
+  requirements:
+    _permission: 'access content'

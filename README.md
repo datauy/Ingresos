@@ -1,5 +1,5 @@
-# raya
-Cuestionario Raya
+# Ingresos
+Cuestionario Ingresos
 
 Procedimiento de instalación:
 
